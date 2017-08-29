@@ -1,0 +1,780 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Checkout — KSv2</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#444444">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="css/skin.css">
+    <link rel="stylesheet" href="css/vendor/jquery.sidr.css">
+    <link rel="stylesheet" href="css/vendor/owl.carousel.css">
+    <link rel="stylesheet" href="css/vendor/owl.theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <script src="js/vendor/modernizr-custom.min.js"></script>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/jquery.mobile-events.min.js"></script>
+    <script src="js/vendor/jquery.easing.min.js"></script>
+    <script src="js/vendor/jquery.sidr.min.js"></script>
+    <script src="js/vendor/jquery.zoom.min.js"></script>
+    <script src="js/vendor/jquery.underneath.min.js"></script>
+    <script src="js/vendor/owl.carousel.min.js"></script>
+    <script src="js/vendor/jquery.popup.min.js"></script>
+    <script src="js/vendor/jquery.popup.dialog.min.js"></script>
+    <script src="js/vendor/jquery.tabulatron.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body class="checkout">
+<!--[if lte IE 9]><p class="browserupgrade">Ваш броузер <strong>устарел</strong> browser. Пожалуйста, <a href="http://browsehappy.com/">обновите броузер</a> как можно скорее.</p><![endif]-->
+<div class="media-debug" data-todo="REMOVE ON PRODUCTION"></div>
+
+<!-- .b_page -->
+<div class="b_page">
+
+
+
+
+
+<!-- MAIN -->
+
+
+
+
+
+<!-- .b_page-header -->
+<header class="b_page-header js--vue-shoppingCartValue">
+
+    <!-- .b_page-header__wrapper--handheld -->
+    <div class="b_page-header__wrapper b_page-header__wrapper--handheld">
+
+        <button class="b_page-header__mini-button b_page-header__mini-button--menu js--offscreen-navigation--toggle"></button>
+
+        <a href="#" class="b_branding b_branding--handheld">
+            <img class="b_branding__logo" src="img/logotype-kidstyle.svg" alt="{meta:site-name}">
+        </a>
+
+        <button class="b_page-header__mini-button b_page-header__mini-button--cart  js--shopping-cart-button js--offscreen-cart--toggle">
+            <span class="b_page-header__mini-button-value">{{value}} грн.</span>
+        </button>
+
+    </div>
+    <!-- /.b_page-header__wrapper--handheld -->
+
+
+
+    <!-- .b_page-header__wrapper--screen -->
+    <div class="b_page-header__wrapper b_page-header__wrapper--screen">
+
+        <div class="b_page-header__branding">
+            <a class="b_branding b_branding--header" href="#">
+                <img class="b_branding__logo" src="img/logotype-kidstyle.svg" alt="{meta:site-name}">
+            </a>
+        </div>
+        <div class="b_page-header__controls">
+            <div class="b_page-header__secondary-controls">
+
+                <div class="b_page-header__column b_page-header__column--span-3">
+                    <div class="b_dropdown-toggle js--toggle">
+                        <span class="b_dropdown-toggle__caption">
+                            <span class="fa fa-fw fa-phone"></span>(044) 22-111-66<span class="fa fa-fw fa-caret-down b_dropdown-toggle__trigger-icon"></span>
+                        </span>
+                        <ul class="b_dropdown-toggle__list" data-toggle=".js--toggle">
+                            <li class="b_dropdown-toggle__list-item">
+                                <a href="tel:044044044" class="b_dropdown-toggle__link"><span class="fa fa-fw fa-phone"></span>(044) 22-111-66 <span class="b_dropdown-toggle__small">(офис)</span></a>
+                            </li>
+                            <li class="b_dropdown-toggle__list-item">
+                                <a href="tel:911911911" class="b_dropdown-toggle__link"><span class="fa fa-fw fa-mobile"></span>(097) 987-65-43 <span class="b_dropdown-toggle__small">(моб. Kyivstar)</span></a>
+                            </li>
+                            <li class="b_dropdown-toggle__list-item">
+                                <a href="tel:911911911" class="b_dropdown-toggle__link"><span class="fa fa-fw fa-mobile"></span>(093) 765-43-21 <span class="b_dropdown-toggle__small">(моб. Lifecell)</span></a>
+                            </li>
+                            <li class="b_dropdown-toggle__list-item">
+                                <a href="skype:kidstyle?call" class="b_dropdown-toggle__link"><span class="fa fa-fw fa-skype"></span>kidstyle <span class="b_dropdown-toggle__small">(Skype)</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="b_page-header__column b_page-header__column--span-3">
+                    <ul class="b_link-group b_social-links">
+                        <li class="b_link-group__item">
+                            <a href="#{tw-profile}" class="b_link-group__link fa fa-fw fa-twitter" aria-hidden="true"></a>
+                        </li>
+                        <li class="b_link-group__item">
+                            <a href="#{fb-profile}" class="b_link-group__link fa fa-fw fa-facebook" aria-hidden="true"></a>
+                        </li>
+                        <li class="b_link-group__item">
+                            <a href="#{vk-profile}" class="b_link-group__link fa fa-fw fa-vk" aria-hidden="true"></a>
+                        </li>
+                        <li class="b_link-group__item">
+                            <a href="#{ok-profile}" class="b_link-group__link fa fa-fw fa-odnoklassniki" aria-hidden="true"></a>
+                        </li>
+                        <li class="b_link-group__item">
+                            <a href="#{ig-profile}" class="b_link-group__link fa fa-fw fa-instagram" aria-hidden="true"></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="b_page-header__column b_page-header__column--span-3">
+                    <ul class="b_link-group text-right">
+                        <!-- @if !authorized -->
+                        <li class="b_link-group__item"><a href="#" class="b_link-group__link" data-dialog="#modal-login"><span class="fa fa-fw fa-sign-in"></span>Вход</a></li>
+                        <!-- @if !authorized -->
+                        <!-- @if authorized -->
+                        <!--
+                        <li class="b_link-group__item"><a href="#" class="b_link-group__link"><span class="fa fa-fw fa-sign-out"></span>Выход</a></li>
+                        <li class="b_link-group__item"><a href="#" class="b_link-group__link"><span class="fa fa-fw fa-sign-in"></span>Кабинет</a></li>
+                        -->
+                        <!-- @if authorized -->
+                    </ul>
+                </div>
+
+            </div>
+            <div class="b_page-header__primary-controls">
+                <div class="b_page-header__column b_page-header__column--span-7">
+
+                    <div class="b_navigation__wrapper">
+                        <ul class="b_navigation">
+                            <li class="b_navigation__item"><a href="#" class="b_navigation__link">Главная</a></li>
+                            <li class="b_navigation__item"><a href="#" class="b_navigation__link js--product-categories-dropdown-toggle">Каталог</a></li>
+                            <li class="b_navigation__item"><a href="#" class="b_navigation__link">Акции</a></li>
+                            <li class="b_navigation__item"><a href="#" class="b_navigation__link">О магазине</a></li>
+                            <li class="b_navigation__item"><a href="#" class="b_navigation__link">Контакты</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="b_page-header__column b_page-header__column--span-2 text-right nowrap">
+                    <form action="" class="b_search-form b_search-form--collapsed">
+                        <button action="#{search-results-page}" type="submit" class="b_page-header__button b_page-header__button--search js--search-field-toggle"></button>
+                        <input type="search" class="b_search-form__input" placeholder="Я ищу…">
+                    </form>
+                    <a href="#{shopping-cart-page}" class="b_page-header__button b_page-header__button--cart  js--shopping-cart-button2">
+                        <span class="b_page-header__button-value">{{value}} грн.</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.b_page-header__wrapper--screen -->
+
+    <!-- .b_navigation-dropdown -->
+    <div class="b_navigation-dropdown" id="js--product-categories--dropdown" data-toggle=".js--product-categories-dropdown-toggle">
+
+        <!-- .b_navigation-dropdown__outer-wrapper -->
+        <div class="b_navigation-dropdown__outer-wrapper">
+
+            <!-- .b_navigation-dropdown__inner-wrapper -->
+            <div class="b_navigation-dropdown__inner-wrapper">
+
+                <!-- .b_navigation-dropdown__column -->
+                <div class="b_navigation-dropdown__column">
+
+                    <!-- .b_navigation-dropdown__column-picture -->
+                    <picture class="b_navigation-dropdown__column-picture">
+                        <img class="b_navigation-dropdown__column-image" src="img/nav-girl.svg" alt="">
+                    </picture>
+                    <!-- /.b_navigation-dropdown__column-picture -->
+
+                    <!-- .b_navigation-dropdown__column-text -->
+                    <div class="b_navigation-dropdown__column-text">
+                        <div class="b_navigation-dropdown__column-title">Для девочек</div>
+
+                        <!-- .b_navigation-dropdown__column-half -->
+                        <div class="b_navigation-dropdown__column-half">
+                            <ul class="b_navigation-dropdown__list">
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-jean"></span>Джинсы</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-down-jacket"></span>Куртки</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-dress"></span>Платья</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-overhalls"></span>Комбинезоны</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-women-suit"></span>Костюмы</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-women-coat"></span>Пиджаки</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-pullover"></span>Свитеры</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-skirt"></span>Юбки</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-leather-jacket"></span>Куртки</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.b_navigation-dropdown__column-half -->
+
+                        <!-- .b_navigation-dropdown__column-half -->
+                        <div class="b_navigation-dropdown__column-half">
+                            <ul class="b_navigation-dropdown__list">
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-jean"></span>Джинсы</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-down-jacket"></span>Куртки</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-dress"></span>Платья</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-overhalls"></span>Комбинезоны</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-women-suit"></span>Костюмы</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-women-coat"></span>Пиджаки</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-pullover"></span>Свитеры</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-skirt"></span>Юбки</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-leather-jacket"></span>Куртки</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.b_navigation-dropdown__column-half -->
+
+                    </div>
+                    <!-- .b_navigation-dropdown__column-text -->
+
+                </div>
+                <!-- .b_navigation-dropdown__column -->
+
+                <!-- .b_navigation-dropdown__column -->
+                <div class="b_navigation-dropdown__column">
+                    <picture class="b_navigation-dropdown__column-picture">
+                        <img class="b_navigation-dropdown__column-image" src="img/nav-boy.svg" alt="">
+                    </picture>
+                    <div class="b_navigation-dropdown__column-text">
+                        <div class="b_navigation-dropdown__column-title">Для мальчиков</div>
+                        <div class="b_navigation-dropdown__column-half">
+                            <ul class="b_navigation-dropdown__list">
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-jean"></span>Джинсы</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-down-jacket"></span>Куртки</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-dress"></span>Платья</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-overhalls"></span>Комбинезоны</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-women-suit"></span>Костюмы</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-women-coat"></span>Пиджаки</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-pullover"></span>Свитеры</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-skirt"></span>Юбки</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-leather-jacket"></span>Куртки</a></li>
+                            </ul>
+                        </div>
+                        <div class="b_navigation-dropdown__column-half">
+                            <ul class="b_navigation-dropdown__list">
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-jean"></span>Джинсы</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-down-jacket"></span>Куртки</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-dress"></span>Платья</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-overhalls"></span>Комбинезоны</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-women-suit"></span>Костюмы</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-women-coat"></span>Пиджаки</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-pullover"></span>Свитеры</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-skirt"></span>Юбки</a></li>
+                                <li class="b_navigation-dropdown__item"><a href="#" class="b_navigation-dropdown__link"><span class="flaticon-leather-jacket"></span>Куртки</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.b_navigation-dropdown__column -->
+
+            </div>
+            <!-- /.b_navigation-dropdown__inner-wrapper -->
+
+        </div>
+        <!-- /.b_navigation-dropdown__outer-wrapper -->
+
+    </div>
+    <!-- .b_navigation-dropdown -->
+
+</header>
+<!-- /.b_page-header -->
+
+
+<!-- .b_page-body -->
+<main class="b_page-body">
+
+    <!-- .b_page-body__container -->
+    <article class="b_page-body__container b_page-body__container--top">
+
+        <div class="b_wysiwyg b_wysiwyg--chopped">
+            <h1>Детали заказа</h1>
+        </div>
+
+        <div class="b_row b_order-details">
+            <div class="b_cell b_cell--grow">
+                <table class="b_table">
+                    <thead class="b_table__header">
+                        <tr class="b_table__row">
+                            <td class="b_table__cell">Заказ</td>
+                            <td class="b_table__cell"><span class="fa fa-fw fa-hashtag" aria-hidden="true"></span>963 от 12.12.2012</td>
+                        </tr>
+                    </thead>
+                    <tbody class="b_table__body">
+                        <tr class="b_table__row">
+                            <td class="b_table__cell">Текущий статус</td>
+                            <td class="b_table__cell">Ожидается оплата</td>
+                        </tr>
+                        <tr class="b_table__row">
+                            <td class="b_table__cell">Логин</td>
+                            <td class="b_table__cell">username@domain.com</td>
+                        </tr>
+                        <tr class="b_table__row">
+                            <td class="b_table__cell">Тип плательщика</td>
+                            <td class="b_table__cell">Физическое лицо</td>
+                        </tr>
+                        <tr class="b_table__row">
+                            <td class="b_table__cell">Ф.И.О.</td>
+                            <td class="b_table__cell">Фамилия Имя Отчество</td>
+                        </tr>
+                        <tr class="b_table__row">
+                            <td class="b_table__cell">Email</td>
+                            <td class="b_table__cell"><a class="b_order-details__link" href="mailto:#">mailbox@domain.com</a></td>
+                        </tr>
+                        <tr class="b_table__row">
+                            <td class="b_table__cell">Комментарии к заказу</td>
+                            <td class="b_table__cell">Комментариев нет</td>
+                        </tr>
+                        <tr class="b_table__row">
+                            <td class="b_table__cell">Платежная система</td>
+                            <td class="b_table__cell">Банковская карта (3000 грн.)</td>
+                        </tr>
+                        <tr class="b_table__row">
+                            <td class="b_table__cell">Служба доставки</td>
+                            <td class="b_table__cell">
+                                <p class="b_order-details__text-line">Самовывоз в Киеве<br>
+                                Склад №1: г. Киев, ул. Улица, д.1, оф.1<br>
+                                Режим работы: ежедневно с 09:00 до 18:00<br>
+                                Тел.: <a class="b_order-details__link" href="tel:#">(044) 123-45-67</a><br>
+                                Email: <a class="b_order-details__link" href="mailto:#">sales@kidstyle.com.ua</a></p>
+                                <p><a href="#" class="b_button b_button--ghost b_button--small"><span class="fa fa-fw fa-credit-card" aria-hidden="true"></span> Показать карту</a></p>
+                            </td>
+                        </tr>
+                        <tr class="b_table__row">
+                            <td class="b_table__cell">Состав отгрузки</td>
+                            <td class="b_table__cell">
+                                <ul class="b_order-details__list">
+                                    <li class="b_order-details__list-item">
+                                        <a class="b_order-details__link" href="#">Платье для девочки 6-9 лет</a>, 1&nbsp;шт.
+                                    </li>
+                                    <li class="b_order-details__list-item">
+                                        <a class="b_order-details__link" href="#">Кеды на каблуке</a>, 1&nbsp;шт.
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="b_wysiwyg b_wysiwyg--chopped">
+            <h1>Содержимое заказа</h1>
+        </div>
+
+        <div class="b_row b_order-details">
+            <div class="b_cell b_cell--grow">
+                <table class="b_table">
+                    <thead class="b_table__header">
+                        <tr class="b_table__row">
+                            <td class="b_table__cell" colspan="2">Наименование</td>
+                            <td class="b_table__cell">Цена</td>
+                            <td class="b_table__cell">Тип цены</td>
+                            <td class="b_table__cell">Кол-во</td>
+                        </tr>
+                    </thead>
+                    <tbody class="b_table__body">
+                        <tr class="b_table__row">
+                            <td class="b_table__cell">
+                                <img src="product-photo-01.jpg" alt="" class="r b_order-details__thumbnail">
+                            </td>
+                            <td class="b_table__cell"><a class="b_order-details__link" href="#{product-permalink}">Платье для девочки 6-9 лет</a></td>
+                            <td class="b_table__cell">3000 грн.</td>
+                            <td class="b_table__cell">Розничная</td>
+                            <td class="b_table__cell">1 шт.</td>
+                        </tr>
+                        <tr class="b_table__row">
+                            <td class="b_table__cell">
+                                <img src="product-photo-02.jpg" alt="" class="r b_order-details__thumbnail">
+                            </td>
+                            <td class="b_table__cell"><a class="b_order-details__link" href="#{product-permalink}">Кеды на каблуке</a></td>
+                            <td class="b_table__cell">3000 грн.</td>
+                            <td class="b_table__cell">Розничная</td>
+                            <td class="b_table__cell">1 шт.</td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="b_table__footer">
+                        <tr class="b_table__row">
+                            <td colspan="5" class="b_table__cell">
+                                <p>Товаров на сумму: <strong>3000 грн.</strong><br>
+                                Стоимость доставки: <strong>0 грн.</strong></p>
+                                <p><strong>Итого: 3000 грн.</strong></p>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p><a class="b_button b_button--ghost" href="#"><span class="fa fa-fw fa-arrow-left" aria-hidden="true"></span>Вернуться назад</a></p>
+
+            </div>
+        </div>
+
+
+    </article>
+    <!-- /.b_page-body__container -->
+
+</main>
+<!-- /.b_page-body -->
+
+<!-- .b_page-footer -->
+<footer class="b_page-footer">
+
+    <!-- .b_page-footer__jumbotron -->
+    <div class="b_page-footer__jumbotron">
+
+        <!-- .b_page-footer__wrapper -->
+        <div class="b_page-footer__wrapper">
+
+            <!-- .b_page-footer__branding -->
+            <div class="b_page-footer__branding">
+                <a class="b_branding b_branding--footer" href="#">
+                    <img class="b_branding__logo" src="img/logotype-kidstyle.svg" alt="{meta:site-name}">
+                </a>
+            </div>
+            <!-- /.b_page-footer__branding -->
+
+            <!-- .b_page-footer__controls -->
+            <div class="b_page-footer__controls">
+
+                <!-- .b_page-footer__column -->
+                <div class="b_page-footer__column b_page-footer__column--span-2">
+                    <ul class="b_link-list b_page-footer__menu">
+                        <li class="b_link-list__item b_page-footer__menuitem">
+                            <a href="#" class="b_link-list__link b_page-footer__menulink">
+                                <span class="fa fa-fw fa-home" aria-hidden="true"></span>
+                                Главная
+                            </a>
+                        </li>
+                        <li class="b_link-list__item b_page-footer__menuitem">
+                            <a href="#" class="b_link-list__link b_page-footer__menulink">
+                                <span class="fa fa-fw fa-shopping-cart" aria-hidden="true"></span>
+                                Каталог
+                            </a>
+                        </li>
+                        <li class="b_link-list__item b_page-footer__menuitem">
+                            <a href="#" class="b_link-list__link b_page-footer__menulink">
+                                <span class="fa fa-fw fa-gift" aria-hidden="true"></span>
+                                Акции
+                            </a>
+                        </li>
+                        <li class="b_link-list__item b_page-footer__menuitem">
+                            <a href="#" class="b_link-list__link b_page-footer__menulink">
+                                <span class="fa fa-fw fa-info-circle" aria-hidden="true"></span>
+                                О магазине
+                            </a>
+                        </li>
+                        <li class="b_link-list__item b_page-footer__menuitem">
+                            <a href="#" class="b_link-list__link b_page-footer__menulink">
+                                <span class="fa fa-fw fa-comments" aria-hidden="true"></span>
+                                Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.b_page-footer__column -->
+
+                <!-- .b_page-footer__column -->
+                <div class="b_page-footer__column b_page-footer__column--span-4">
+                    <ul class="b_link-list">
+                        <li class="b_link-list__item">
+                            <a href="tel:#" class="b_link-list__link b_page-footer__link">
+                                <span class="fa fa-fw fa-phone" aria-hidden="true"></span>
+                                <span class="nowrap">(044) 222-33-44</span>
+                            </a>
+                        </li>
+                        <li class="b_link-list__item">
+                            <a href="tel:#" class="b_link-list__link b_page-footer__link">
+                                <span class="fa fa-fw fa-phone" aria-hidden="true"></span>
+                                <span class="nowrap">(099) 555-99-66</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="ir">Магазин детской одежды и обуви «Kidstyle»</p>
+                    <p>
+                        <span class="fa fa-fw fa-map-signs" aria-hidden="true"></span>
+                        <span>01001</span>
+                        <span class="nowrap">г. Киев</span>,
+                        <span>ул. Прорезная 1б оф. 112</span>
+                        <br>
+                        <span class="fa fa-fw fa-clock-o" aria-hidden="true"></span>
+                        <time datetime="Mo,Fr 09:00−19:00">ПН-ПТ 9:00-19:00</time>
+                    </p>
+                    <ul class="b_link-list">
+                        <li class="b_link-list__item">
+                            <a href="mailto:#" class="b_page-footer__link">
+                                <span class="fa fa-fw fa-envelope-o" aria-hidden="true"></span>
+                                <span>shop@kidstyle.co.ua</span>
+                            </a>
+                        </li>
+                        <li class="b_link-list__item">
+                            <a href="skype:#?call" class="b_page-footer__link">
+                                <span class="fa fa-fw fa-skype" aria-hidden="true"></span>
+                                <span>kidstyle</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.b_page-footer__column -->
+
+                <!-- .b_page-footer__column -->
+                <div class="b_page-footer__column b_page-footer__column--span-3">
+                    <ul class="b_link-list">
+                        <li class="b_link-list__item">
+                            <a href="#" class="b_link-list__link b_page-footer__link">
+                                <span class="fa fa-fw fa-caret-right" aria-hidden="true"></span>
+                                Как сделать покупку?
+                            </a>
+                        </li>
+                        <li class="b_link-list__item">
+                            <a href="#" class="b_link-list__link b_page-footer__link">
+                                <span class="fa fa-fw fa-caret-right" aria-hidden="true"></span>
+                                Как сэкономить?
+                            </a>
+                        </li>
+                        <li class="b_link-list__item">
+                            <a href="#" class="b_link-list__link b_page-footer__link">
+                                <span class="fa fa-fw fa-caret-right" aria-hidden="true"></span>
+                                Как угадать с размером?
+                            </a>
+                        </li>
+                        <li class="b_link-list__item">
+                            <a href="#" class="b_link-list__link b_page-footer__link">
+                                <span class="fa fa-fw fa-caret-right" aria-hidden="true"></span>
+                                Как получить или вернуть товар?
+                            </a>
+                        </li>
+                        <li class="b_link-list__item">
+                            <a href="#" class="b_link-list__link b_page-footer__link">
+                                <span class="fa fa-fw fa-caret-right" aria-hidden="true"></span>
+                                Гарантии и обязательства
+                            </a>
+                        </li>
+                        <li class="b_link-list__item">
+                            <a href="#" class="b_link-list__link b_page-footer__link">
+                                <span class="fa fa-fw fa-caret-right" aria-hidden="true"></span>
+                                Политика конфиденциальности
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="b_link-group b_social-links b_social-links--footer">
+                        <li class="b_link-group__item">
+                            <a href="#{tw-profile}" class="b_link-group__link b_page-footer__link fa fa-fw fa-twitter" aria-hidden="true"></a>
+                        </li>
+                        <li class="b_link-group__item">
+                            <a href="#{fb-profile}" class="b_link-group__link b_page-footer__link fa fa-fw fa-facebook" aria-hidden="true"></a>
+                        </li>
+                        <li class="b_link-group__item">
+                            <a href="#{vk-profile}" class="b_link-group__link b_page-footer__link fa fa-fw fa-vk" aria-hidden="true"></a>
+                        </li>
+                        <li class="b_link-group__item">
+                            <a href="#{ok-profile}" class="b_link-group__link b_page-footer__link fa fa-fw fa-odnoklassniki" aria-hidden="true"></a>
+                        </li>
+                        <li class="b_link-group__item">
+                            <a href="#{ig-profile}" class="b_link-group__link b_page-footer__link fa fa-fw fa-instagram" aria-hidden="true"></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.b_page-footer__column -->
+
+            </div>
+            <!-- /.b_page-footer__controls -->
+
+        </div>
+        <!-- /.b_page-footer__wrapper -->
+
+    </div>
+    <!-- /.b_page-footer__jumbotron -->
+
+    <!-- .b_page-footer__colophon -->
+    <div class="b_page-footer__colophon">
+        <div class="b_page-footer__column">
+            <p class="b_page-footer__colophon-text">©2016 Kidstyle. Все права защищены.</p>
+        </div>
+        <div class="b_page-footer__column b_page-footer__column--balance">
+            <p class="b_page-footer__colophon-text">Разработка и поддержка: <a href="http://realtime.com.ua?utm_source=client&utm_medium=website_footer&utm_campaign=credits_link" class="b_page-footer__credits-link"><img src="img/logotype-realtime.svg" class="b_page-footer__credits-image" alt="Realtime digital agency"></a></p>
+        </div>
+    </div>
+    <!-- /.b_page-footer__colophon -->
+
+</footer>
+<!-- /.b_page-footer -->
+
+<!-- /MAIN -->
+
+
+
+
+
+</div>
+<!-- /.b-page -->
+
+
+
+<!-- .b_popup -->
+<div class="popup b_popup effect-fade-scale effect-sticky" id="modal-login">
+
+    <div class="popup-content">
+
+        <!-- .b_tabbed -->
+        <div class="b_tabbed" id="js--tabulatron--authorize" data-controls=".b_tabbed__control-set" data-tabs=".b_tabbed__tab-contents">
+
+            <!-- .b_tabbed__control-set -->
+            <ul class="b_tabbed__control-set">
+                <li class="b_tabbed__control b_tabbed__control--half js--current">Вход</li>
+                <li class="b_tabbed__control b_tabbed__control--half">Регистрация</li>
+            </ul>
+            <!-- /.b_tabbed__control-set -->
+
+            <!-- .b_tabbed__tab-contents -->
+            <ul class="b_tabbed__tab-contents">
+
+                <!-- .b_tabbed__tab-content -->
+                <li class="b_tabbed__tab-content js--current">
+
+                    <!-- .b_form -->
+                    <form class="b_form b_form--chopped" action="#{login}">
+                        <p class="b_form__heading">Вход с учетной записью</p>
+                        <hr class="b_form__divider">
+                        <div class="b_cell">
+                            <label class="b_form__label" for="login__email">E-mail</label>
+                            <div class="b_form__input-container">
+                                <input class="b_form__text-input" id="login__email" type="email" placeholder="Ваш e-mail">
+                            </div>
+                        </div>
+
+                        <div class="b_cell">
+                            <label class="b_form__label" for="login__password">Пароль</label>
+                            <div class="b_form__input-container">
+                                <input class="b_form__text-input" id="login__password" type="password" placeholder="Ваш пароль">
+                            </div>
+                        </div>
+                        <p class="b_form__text"><a class="b_form__link" href="#">Забыли пароль?</a></p>
+                        <hr class="b_form__divider">
+                        <p class="b_form__heading">Войти через соцсеть</p>
+                        <ul class="b_link-group b_link-group--centered b_link-group--puffy b_social-links">
+                            <li class="b_link-group__item"><a href="#" class="b_link-group__link fa fa-fw fa-twitter"></a></li>
+                            <li class="b_link-group__item"><a href="#" class="b_link-group__link fa fa-fw fa-facebook"></a></li>
+                            <li class="b_link-group__item"><a href="#" class="b_link-group__link fa fa-fw fa-vk"></a></li>
+                            <li class="b_link-group__item"><a href="#" class="b_link-group__link fa fa-fw fa-odnoklassniki"></a></li>
+                            <li class="b_link-group__item"><a href="#" class="b_link-group__link fa fa-fw fa-instagram"></a></li>
+                        </ul>
+                        <div class="b_button-group">
+                            <button class="b_button-group__button b_button-group__button--cancel b_button-group__button--half popup-close"><span class="fa fa-fw fa-times"></span>Отмена</button>
+                            <button type="submit" class="b_button-group__button b_button-group__button--default b_button-group__button--half"><span class="fa fa-fw fa-sign-in"></span>Войти</button>
+                        </div>
+                    </form>
+                    <!-- .b_form -->
+
+                </li>
+                <!-- /.b_tabbed__tab-content -->
+
+                <!-- .b_tabbed__tab-content -->
+                <li class="b_tabbed__tab-content">
+
+                    <!-- .b_form -->
+                    <form class="b_form b_form--chopped action="#{create-account}"">
+                        <p class="b_form__heading">Новая учетная запись</p>
+                        <hr class="b_form__divider">
+                        <div class="b_cell">
+                            <label class="b_form__label" for="sign-in__email">E-mail</label>
+                            <div class="b_form__input-container">
+                                <input class="b_form__text-input" id="sign-in__email" type="email" placeholder="Ваш e-mail">
+                            </div>
+                        </div>
+                        <div class="b_cell">
+                            <label class="b_form__label" for="sign-in__password">Пароль</label>
+                            <div class="b_form__input-container">
+                                <input class="b_form__text-input" id="sign-in__password" type="password" placeholder="Ваш пароль">
+                            </div>
+                        </div>
+                        <hr class="b_form__divider">
+                        <p class="b_form__heading">Вход через соцсеть</p>
+                        <ul class="b_link-group b_link-group--centered b_link-group--puffy b_social-links">
+                            <li class="b_link-group__item"><a href="#" class="b_link-group__link fa fa-fw fa-twitter"></a></li>
+                            <li class="b_link-group__item"><a href="#" class="b_link-group__link fa fa-fw fa-facebook"></a></li>
+                            <li class="b_link-group__item"><a href="#" class="b_link-group__link fa fa-fw fa-vk"></a></li>
+                            <li class="b_link-group__item"><a href="#" class="b_link-group__link fa fa-fw fa-odnoklassniki"></a></li>
+                            <li class="b_link-group__item"><a href="#" class="b_link-group__link fa fa-fw fa-instagram"></a></li>
+                        </ul>
+                        <div class="b_button-group">
+                            <button class="b_button b_button--cancel b_button-group__button b_button-group__button--half popup-close"><span class="fa fa-fw fa-times"></span>Отмена</button>
+                            <button class="b_button b_button--default b_button-group__button b_button-group__button--half"><span class="fa fa-fw fa-user-plus"></span>Создать</button>
+                        </div>
+                    </form>
+                    <!-- .b_form -->
+
+                </li>
+                <!-- /.b_tabbed__tab-content -->
+
+            </ul>
+            <!-- /.b_tabbed__tab-contents -->
+
+        </div>
+        <!-- /.b_tabbed -->
+
+    </div>
+</div>
+<!-- /.b_popup -->
+
+
+
+<!-- offscreen bars -->
+<div class="b_offscreen-menu" id="js--offscreen-navigation">
+    <button class="b_offscreen-menu__close-button js--offscreen-navigation--toggle"><span class="fa fa-fw fa-times" aria-hidden="true"></span></button>
+    <ul class="b_offscreen-menu__navigation">
+        <li class="b_offscreen-menu__item"><a class="b_offscreen-menu__link" href="#">Главная</a></li>
+        <li class="b_offscreen-menu__item"><a class="b_offscreen-menu__link" href="#">Каталог</a></li>
+        <li class="b_offscreen-menu__item"><a class="b_offscreen-menu__link" href="#">Акции</a></li>
+        <li class="b_offscreen-menu__item"><a class="b_offscreen-menu__link" href="#">О магазине</a></li>
+        <li class="b_offscreen-menu__item"><a class="b_offscreen-menu__link" href="#">Контакты</a></li>
+    </ul>
+    <form class="b_offscreen-menu__search-form" action="#{search-script}">
+        <input class="b_offscreen-menu__search-input" type="text" placeholder="Я ищу…">
+        <button class="b_offscreen-menu__search-button"></button>
+    </form>
+</div>
+
+
+
+<div id="js--offscreen-cart">
+
+    <!-- .b_offscreen-cart -->
+    <div class="b_offscreen-cart">
+
+        <div class="b_offscreen-cart__header">
+            <a href="#" class="b_offscreen-cart__close-button js--offscreen-cart--toggle"><span class="fa fa-fw fa-times"></span></a><div class="b_offscreen-cart__title">Корзина</div><a href="#{shopping-cart-page}" class="b_offscreen-cart__cart-button"><span class="fa fa-fw fa-shopping-cart" aria-hidden="true"></span></a>
+        </div>
+
+        <div class="b_offscreen-cart__content" id="js--shopping-cart">
+
+            <div class="b_offscreen-cart__scroll-panel">
+
+                <ul class="b_offscreen-cart__items">
+                    <li class="b_offscreen-cart__item" v-for="item of items" id="itemid-{{item.id}}">
+                        <a href="{{item.permalink}}" class="b_offscreen-cart__item-name">{{item.name}}</a>
+                        <div class="b_offscreen-cart__item-price">{{item.count}} × {{item.price}} грн.</div>
+                    </li>
+                </ul>
+
+                <div class="b_offscreen-cart__summary">
+                    <p class="b_offscreen-cart__summary-discount-text">общая сумма: {{subtotalPrice}} грн.<br>экономия: {{discountValue}} грн. ({{discountVolume}}% скидки)<br>доставка: {{shippingCost}} грн.</p>
+                    <p class="b_offscreen-cart__summary-text">
+                        Сумма к оплате:
+                        <span class="b_offscreen-cart__summary-price">
+                            <span class="b_offscreen-cart__summary-price-value">{{totalPrice}}</span>
+                            <span class="b_offscreen-cart__summary-currency">грн.</span>
+                        </span>
+                    </p>
+                    <p class="b_offscreen-cart__summary-text">
+                        <a href="#{checkout-page}" class="b_button b_button--default"><span class="fa fa-fw fa-credit-card" aria-hidden="true"></span>Оформить</a>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.b_offscreen-cart -->
+
+</div>
+<!-- offscreen bars -->
+
+</body>
+</html>
+

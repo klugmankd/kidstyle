@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" baseProfile="basic" id="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" xml:space="preserve">
+<path id="icon-burger" fill="#FFFFFF" d="M30,14H10v-3h20V14z M30,22H10v-3h20V22z M30,30H10v-3h20V30z"/>
+</svg>
